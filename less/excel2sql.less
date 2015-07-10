@@ -1,0 +1,80 @@
+@color-1: #08A2F5;
+@color-2: #0189D2;
+@color-3: #025F92;
+@color-xls: #1AAF1C;
+
+
+
+
+#container {
+  width: 950px;
+  margin: auto;
+  font-size: 10pt;
+  font-family: 'Source Sans Pro', sans-serif;
+  
+  #header {
+    #logotype {
+      margin-top: 10px;
+    }
+  }
+  
+  #content {
+    margin-top: 25px;
+  }
+  
+  #footer {
+    font-size: 8pt;
+    text-align: right;
+  }
+}
+
+textarea {
+  font-family: 'Lucida Console';
+}
+
+
+#excel-input, #sql-output {
+  height: 500px;
+  font-size: 8pt;
+}
+
+
+.left {
+  text-align: left;
+  float: left;
+}
+
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+.right {
+  text-align: right;
+  float: right;
+}
+
+.btn {
+  margin: 5px;
+}
+
+
+h1 {
+  font-weight: bold;
+  color: @color-1;
+}
+
+h2 {
+  color: @color-2;
+}
+
+label {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.color-xls {
+  color: @color-xls;
+}
