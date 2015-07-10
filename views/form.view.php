@@ -10,7 +10,7 @@
     </h2>
     
     
-    <form action="" method="post">  
+    <form action="#" method="post" id="form-main">  
       <label for="excel-input">Copy 'n' paste your Excel table here:</label>
       <textarea name="excel_input" id="excel-input" class="form-control form-save"><?php echo $_POST['excel_input']; ?></textarea>
 
@@ -32,7 +32,7 @@
     </h2>
     
     <label for="sql-output">Voilà, here is your SQL insert queries:</label>
-    <textarea name="sql_output" id="sql-output" class="form-control form-save" readonly><?php echo $this->data->toSql(); // Generated SQL queries ?></textarea>
+    <textarea name="sql_output" id="sql-output" class="form-control form-save" readonly><?php if(is_a($this->data, 'models\Table')) echo $this->data->toSql(); // Generated SQL queries ?></textarea>
 
     <div class="center">
       <div class="btn btn-default" onclick="$('#sql-output').select();">

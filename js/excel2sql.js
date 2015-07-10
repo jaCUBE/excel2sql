@@ -14,6 +14,11 @@ $(function(){ // jQuery, let's go! :)
 
 
 
+function use_sample_content(){
+  var content = $('#sample-content-xls').text();
+  $('#excel-input').val(content);
+  $('#form-main').submit();
+}
 
 
 

@@ -20,7 +20,7 @@ class SQLGenerator {
   
   public function tableToSQL($table){    
     foreach($table->rows as $i => $row){
-      $this->sql[] = 'INSERT INTO '.$table->name.' ('.$this->prepareSQLCols($table).') VALUES('.$this->prepareSQLValues($table, $i).');';
+      $this->sql[] = 'INSERT INTO '.$table->name.' ('.$this->prepareSQLCols($table).') VALUES ('.$this->prepareSQLValues($table, $i).');';
     }
   }
   

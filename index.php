@@ -15,14 +15,14 @@ require 'bootstrap.php';
     <meta charset="UTF-8">
     <title>Excel2SQL</title>
     
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     
     <script src="<?php echo URL; ?>/js/excel2sql.min.js"></script>
     <link href="<?php echo URL; ?>/css/excel2sql.css" rel="stylesheet">
@@ -39,10 +39,21 @@ require 'bootstrap.php';
         </div>
       </div>
       
+      
+      
+      
+      
       <div id="content">
         Aloha!<br />
         This simple tools provides you easy way how to convert your current boring Excel table into powerful SQL powered database.
-      
+        Copy and paste your table into input, parse it and get your SQL INSERT commands. No more of annoying CSV or different method of import.
+        <br /><br />
+        This tool should work with any table editor and even when you are copying table straight from some webpage.
+        
+         
+        <?php require 'views/tutorial.view.php'; ?>
+        
+        
         
         <?php $main = new controllers\Excel2SQL(); // Controller of Excel2SQL utility ?>
       </div>
@@ -53,10 +64,11 @@ require 'bootstrap.php';
       <?php } ?>
       
       
-      <div id="footer">
-        <hr />
         
-        Jakub Rychecky, 2015
+        
+        
+      <div id="footer">
+        2015
       </div>
 
 
