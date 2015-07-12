@@ -12,7 +12,7 @@
     
     <form action="#" method="post" id="form-main">  
       <label for="excel-input">Copy 'n' paste your Excel table here:</label>
-      <textarea name="excel_input" id="excel-input" class="form-control form-save"><?php echo $_POST['excel_input']; ?></textarea>
+      <textarea name="excel_input" id="excel-input" class="form-control form-save"><?php echo @$_POST['excel_input']; ?></textarea>
 
       <div class="center">
         <button type="submit" class="btn btn-primary btn-lg">
@@ -46,3 +46,5 @@
   
   
 </div>
+
+

@@ -18,7 +18,7 @@ class SQLGenerator {
   
   public $sql;
   
-  public function tableToSQL($table){    
+  public function tableToSQL($table){  
     foreach($table->rows as $i => $row){
       $this->sql[] = 'INSERT INTO '.$table->name.' ('.$this->prepareSQLCols($table).') VALUES ('.$this->prepareSQLValues($table, $i).');';
     }
@@ -35,7 +35,7 @@ class SQLGenerator {
     $cols = Array();
     
     foreach($table->cols as $col){
-      $cols[] = "'".$col."'";
+      $cols[] = '`'.$col->name.'`';
     }
     
     return implode(',', $cols);
@@ -47,7 +47,7 @@ class SQLGenerator {
     $values = Array();
     
     foreach($table->rows[$i] as $i_col => $value){
-      $values[] = "'".$value."'";
+      $values[] = $table->cols[$i_col]->formatValue($value);
     }
     
     return implode(',', $values);

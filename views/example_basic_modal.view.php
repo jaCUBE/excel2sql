@@ -1,19 +1,9 @@
-<div class="right">
-  <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#sample-xls">
-    Show sample Excel table
-  </button>
-</div>
-
-
-
-
-
-<div class="modal fade" id="sample-xls">
+<div class="modal fade" id="example-basic">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-        <h4 class="modal-title">Sample Excel Table</h4>
+        <h4 class="modal-title">Example: Basic Formatting</h4>
       </div>
       <div class="modal-body">
         <div class="row">
@@ -74,21 +64,20 @@
       
       
       
-    
-    <div id="sample-content-xls" style="display: none;">artists		
-name	surname	age
-Paul	Simon	73
-Art	Garfunkel	73
-Billie	Holiday	44</div>
       
-      
-      
-      
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="use_sample_content();">Use sample table above in form</button>
+      <div class="modal-footer">        
+        <button type="button" class="btn btn-success" onclick="use_sample_content('basic');">Use sample table above in form</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div>
+
+
+
+ 
+<div id="example-content-basic">artists		
+name	surname	age
+Paul	Simon	73
+Art	Garfunkel	73
+Billie	Holiday	44</div>

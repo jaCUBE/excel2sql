@@ -8,14 +8,18 @@ $(function(){ // jQuery, let's go! :)
   }
     
     
-  $('.form-save').change(save_form); // Everychange of form inputs causes saving form into local storage  
+  $('.form-save').change(save_form); // Every change of form inputs causes saving form into local storage    
+
 });
 
 
 
 
-function use_sample_content(){
-  var content = $('#sample-content-xls').text();
+
+
+
+function use_sample_content(type){
+  var content = $('#example-content-'+type).text();
   $('#excel-input').val(content);
   $('#form-main').submit();
 }

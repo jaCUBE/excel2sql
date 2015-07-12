@@ -16,6 +16,9 @@ namespace models;
 
 class Parser {
   
+  
+  
+  
   public function parseExcel($excel){
     $rows_parsed = explode("\n", $excel);
     $rows_parsed = array_filter($rows_parsed);
@@ -26,13 +29,13 @@ class Parser {
     foreach($rows_parsed as $index => $row){
       
       if($index === 0){
-        $table->name = $this->beautifyData($row);
+        $table->name = trim($row);
         continue;
       }
       
       
       if($index === 1){
-        $table->cols = $this->parseRow($row);
+        $table->cols = $this->parseCols($row);
         continue;
       }
       
@@ -41,26 +44,41 @@ class Parser {
     }
     
     return $table;
-    
-    
   }
   
   
   
-  public function beautifyData($data){
-    $data = trim($data);
+
+  
+  
+  
+  
+  public function parseCols($cols_raw){
+    $cols_name = explode("\t", $cols_raw);
+    $cols = Array();
     
-    return $data;
+    foreach($cols_name as $i => $value){
+      $cols[$i] = new Column($value);
+    }
+    
+    return $cols;
   }
+  
+  
+  
   
   
   public function parseRow($row_raw){
     $row_value = explode("\t", $row_raw);
     
     foreach($row_value as $i => $value){
-      $row_value[$i] = $this->beautifyData($value);
+      $row_value[$i] = trim($value);
     }
     
     return $row_value;
   }
+  
+  
+  
+  
 }
