@@ -16,16 +16,21 @@
             
             <br /><br />
             
-            However, you may need to use special formatting for some columns. You can use some commands
-            after <strong>%</strong> character in each column name. Example on the right shows how to do it.
+            However, you may need to use special formatting for some columns. You can use some parameters
+            after <strong>%</strong> character in each Excel input column name. Example on the right shows how to do it.
 
             <br /><br />
             
-            <strong>List of commands:</strong>
+            <strong>List of column parameters:</strong>
             <ul>
-              <li><strong>number</strong> Value will have no quotes (for <em>int</em> and other numeric types in database).</li>
-              <li><strong>date</strong> Value will be formatted as date and time, suitable for <em>date</em> or <em>datetime</em> types in database (Excel value will be parsed by <em>strtotime()</em> PHP function).</li>
-              <li><strong>null</strong> Empty value will be returned as <em>NULL</em>, instead of empty string like in default way.</li>
+              <li><strong>%int</strong> Value will have no quotes and it will be rounded for <em>int</em> database format (alias: %integer).</li>
+              <li><strong>%float</strong> Value will have no quotes and it decimal commas will be replaced with decimal dots for <em>float</em> database format (alias: %real).</li>
+              <li><strong>%date</strong> Value will be formatted as MySQL <em>date</em>, (cell value will be parsed by <em>strtotime()</em> PHP function).</li>
+              <li><strong>%datetime</strong> Value will be formatted as MySQL <em>datetime</em>, (cell value will be parsed by <em>strtotime()</em> PHP function).</li>
+              <li><strong>%time</strong> Value will be formatted as MySQL <em>time</em>, (cell value will be parsed by <em>strtotime()</em> PHP function).</li>
+              <li><strong>%null</strong> Empty value will be returned as <em>NULL</em>, instead of empty string like in default way.</li>
+              <li><strong>%br</strong> Replaces new lines in column for HTML <em>&lt;br&gt;</em>.</li>
+              <li><strong>%brx</strong> Replaces new lines in column for XHTML <em>&lt;br /&gt;</em>.</li>
             </ul>
           </div>
           
@@ -46,7 +51,7 @@
                   <th>surname</th>
                   <th>band&nbsp;%null</th>
                   <th>birth&nbsp;%date</th>
-                  <th>albums&nbsp;%number</th>
+                  <th>albums&nbsp;%int</th>
                 </tr>
               </thead>
               <tbody>
@@ -101,7 +106,7 @@
 
 
 <div id="example-content-advanced">artists				
-name	surname	band %null	birth %date	albums %number
+name	surname	band %null	birth %date	albums %int
 Mark	Knopfler	Dire Straits	12.8.1949	8
 David	Bowie		8 January 1947	26
 David	Gilmour	Pink Floyd	1946/03/06	4</div>

@@ -59,7 +59,7 @@
           Example of basic formatting
         </button>
         <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#example-advanced">
-          Commands (advanced)
+          Parameters (advanced)
         </button>
       </div>
       
