@@ -38,13 +38,13 @@ class SQLGenerator {
    */
   
   public function tableToSQL($table, $delimiter = "\n"){  
-    $sql_start = 'INSERT INTO '.$table->name.' ('.$this->prepareSQLCols($table).') '; // The first part of SQL with inserts and columns
+    $sql_start = 'INSERT INTO '.$table->name.' ('.$this->prepareSQLCols($table).') '; // The first part of SQL with inserts and columns
     
     
     foreach($table->rows as $i => $row){ // Let's generate the rest of SQL query for every data row...
-      $sql_data = 'VALUES ('.$this->prepareSQLValues($table, $i).')'; // Generates values for data row #i
+      $sql_data = 'VALUES ('.$this->prepareSQLValues($table, $i).')'; // Generates values for data row #i
       
-      $this->sql[] = $sql_start.$sql_data; // Joining SQL together and putting into array
+      $this->sql[] = $sql_start.$sql_data.';'; // Joining SQL together and putting into array
     }
     
     

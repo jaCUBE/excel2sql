@@ -42,13 +42,18 @@
     <label for="sql-output">Voilà, here is your SQL insert queries:</label>
     <textarea name="sql_output" id="sql-output" class="form-control form-save" readonly><?php if(is_a($this->data, 'models\Table')) echo $this->data->toSql(); // Generated SQL queries ?></textarea>
 
-    <div class="right">
-      <small>
-        Generate <?php echo count($this->data->rows); // Count of data rows ?> queries took <?php echo round(elapsedTime(), 3); // Elapsed time from script start ?> seconds.
-      </small>
-    </div>
+    
+    <?php if(!empty($this->data->rows)){ // If there are any processed data rows... ?>
+      <div class="right">
+        <small>
+          Generate <?php echo count($this->data->rows); // Count of data rows ?> queries took <?php echo round(elapsedTime(), 3); // Elapsed time from script start ?> seconds.
+        </small>
+      </div>
+    <?php } ?>
+    
     
     <br />
+    
     
     <div class="center">
       <div class="btn btn-default" onclick="$('#sql-output').select();">
