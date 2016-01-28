@@ -204,6 +204,7 @@ class Column {
    */ 
   
   public function formatInt($value){
+    $value = preg_replace('/\s/', '', $value); // Replacing thousands separator
     $value = round($value); // Rounding number
     
     return (int) $value; // Returning integer
@@ -221,7 +222,8 @@ class Column {
   
   public function formatFloat($value){
     $value = preg_replace('/,/', '.', $value); // Replacing decimal comma with decimal dot
-
+    $value = preg_replace('/\s/', '', $value); // Replacing thousands separator
+    
     return (float) $value; // Returning float
   }
   
@@ -287,6 +289,3 @@ class Column {
     
   
 }
-
-
-?>

@@ -49,7 +49,3 @@ function elapsedTime($reset = false){
   
   return $result; // Current microtime - time from very start of script
 }
-
-
-
-?>
