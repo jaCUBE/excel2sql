@@ -24,8 +24,19 @@ require 'bootstrap.php';
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     
-    <script src="<?php echo URL; ?>/js/excel2sql.min.js"></script>
-    <link href="<?php echo URL; ?>/css/excel2sql.css" rel="stylesheet">
+    <script src="<?= URL; ?>/js/excel2sql.min.js"></script>
+    <link href="<?= URL; ?>/css/excel2sql.css" rel="stylesheet">
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-33858105-10', 'auto');
+      ga('send', 'pageview');
+
+    </script>
   </head>
   
   
@@ -34,7 +45,7 @@ require 'bootstrap.php';
       <div id="header">
         <div id="logotype">
           <a href="index.php">
-            <img src="<?php echo URL; ?>/images/logotype.png" alt="Excel2SQL" />
+            <img src="<?= URL; ?>/images/logotype.png" alt="Excel2SQL" />
           </a>
         </div>
       </div>
